@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- Services -->
+	<bean id="JesscoolService" class="com.riseful.jesscooljava.service.JesscoolServiceSimpleImpl">
+		<property name = "articleManager" ref="articleManager"/>   
+		<property name = "userManager" ref="userManager"/>   
+		<property name = "tagManager" ref="tagManager"/>   
+	</bean>
+	<!-- Manager-->
+	<bean id="articleManager" class="com.riseful.jesscooljava.manager.ArticleManagerSimpleImpl">
+		<property name = "articleDao" ref="articleDao"/>   
+	</bean>
+	<bean id="userManager" class="com.riseful.jesscooljava.manager.UserManagerSimpleImpl">
+		<property name = "userDao" ref="userDao"/>   
+	</bean>
+	<bean id="tagManager" class="com.riseful.jesscooljava.manager.TagManagerSimpleImpl">
+		<property name = "tagDao" ref="tagDao"/>   
+	</bean>
+	
+	
+	<!-- Dao-->
+	<bean id="articleDao" class="com.riseful.jesscooljava.dao.ArticleDaoJdbcTemplateImpl">
+		<property name = "template" ref="jdbcTemplate"/>   
+	</bean>
+	<bean id="userDao" class="com.riseful.jesscooljava.dao.UserDaoJdbcTemplateImpl">
+		<property name = "template" ref="jdbcTemplate"/>   
+	</bean>
+	<bean id="tagDao" class="com.riseful.jesscooljava.dao.TagDaoJdbcTemplateImpl">
+		<property name = "template" ref="jdbcTemplate"/>   
+	</bean>
+	
+	
+	<bean id = "jdbcTemplate" class = "org.springframework.jdbc.core.JdbcTemplate">   
+          <property name = "dataSource" ref="dataSource"/>   
+    </bean>
+	
+  
+
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<property name="url"> 
+            <value>jdbc:mysql://localhost:3306/jesscoolDB</value> 
+        </property>  
+        <property name="username"> 
+            <value>jesscool</value> 
+        </property>  
+        <property name="password"> 
+            <value>auscar147896325</value> 
+        </property>  
+	</bean>
+	
+	
+</beans>
+
+
+

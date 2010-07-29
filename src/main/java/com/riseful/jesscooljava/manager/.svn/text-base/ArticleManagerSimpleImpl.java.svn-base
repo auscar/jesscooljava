@@ -1,0 +1,65 @@
+package com.riseful.jesscooljava.manager;
+
+import java.util.List;
+import java.util.Map;
+
+import com.riseful.jesscooljava.dao.ArticleDao;
+import com.riseful.jesscooljava.dao.UserDao;
+import com.riseful.jesscooljava.entity.Article;
+import com.riseful.jesscooljava.entity.Tag;
+import com.riseful.jesscooljava.entity.User;
+
+public class ArticleManagerSimpleImpl implements ArticleManager {
+	private ArticleDao articleDao;
+
+	public void setArticleDao(ArticleDao articleDao) {
+		this.articleDao = articleDao;
+	}
+
+	public Article getArticleById(int id) {
+		return articleDao.getArticleById(id);
+	}
+
+	public List<Article> getSimpleArticlesByTagName(String tagName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public int addArticle(Article article) {
+		return articleDao.addArticle(article);
+	}
+
+	public int addTagIdToArticle(Article article, int tagId) {
+		return articleDao.addTagIdToArticle(article, tagId);
+	}
+
+	public List<Article> getSimpleArticlesByTagId(int tagId, int num) {
+		return articleDao.getSimpleArticlesByTagId(tagId, num);
+	}
+
+	public Map<String, List<Article>> getSimpleArticlesByTagIds(int[] tagIds, int num) {
+		return articleDao.getSimpleArticlesByTagIds(tagIds, num);
+	}
+
+	public Article getSimpleArticleById(int id) {
+		return articleDao.getSimpleArticleById(id);
+	}
+
+	public int deleteArticleTag(Article article, Tag tag) {
+		return articleDao.deleteSimpleArticleTag(article, tag);
+	}
+
+	public int updateSimpleArticle(Article article) {
+		return articleDao.updateSimpleArticle(article);
+	}
+
+	public Map<Tag, List<Article>> getSimpleArticlesWithTagByTagIds(int[] tagIds, int num) {
+		return articleDao.getSimpleArticlesWithTagByTagIds(tagIds, num);
+	}
+
+	public List<Tag> getAllTags() {
+		return articleDao.getAllTag();
+	}
+
+
+}

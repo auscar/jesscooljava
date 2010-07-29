@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry including="**/*.java" kind="src" output="target/test-classes" path="src/test/java"/>
+	<classpathentry including="**/*.java" kind="src" path="src/main/java"/>
+	<classpathentry excluding="**/*.java" kind="src" path="src/main/resources"/>
+	<classpathentry kind="var" path="M2_REPO/aopalliance/aopalliance/1.0/aopalliance-1.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/junit/junit/3.8.1/junit-3.8.1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/log4j/log4j/1.2.12/log4j-1.2.12.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/home/auscar/repo/junit/junit/3.8.1/junit-3.8.1.jar"/>
+	<classpathentry kind="lib" path="/home/auscar/repo/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4.jar"/>
+	<classpathentry kind="lib" path="/home/auscar/repo/log4j/log4j/1.2.11/log4j-1.2.11.jar"/>
+	<classpathentry kind="lib" path="/home/auscar/repo/mysql/mysql-connector-java/5.1.6/mysql-connector-java-5.1.6.jar"/>
+	<classpathentry kind="lib" path="/home/auscar/repo/org/springframework/spring/1.2.6/spring-1.2.6.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>

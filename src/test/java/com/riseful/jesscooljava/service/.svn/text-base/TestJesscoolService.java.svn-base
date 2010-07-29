@@ -1,0 +1,98 @@
+package com.riseful.jesscooljava.service;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import junit.framework.TestCase;
+
+import com.riseful.jesscooljava.base.Util;
+import com.riseful.jesscooljava.entity.Article;
+import com.riseful.jesscooljava.entity.Tag;
+import com.riseful.jesscooljava.entity.User;
+
+public class TestJesscoolService extends TestCase {
+	private JesscoolService service;
+	public void setUp(){
+		this.service = (JesscoolService)Util.getCtx().getBean("JesscoolService");
+	}
+	public void testGetArticleById() {
+		Article a = service.getArticleById(1);
+		System.out.println("@@@@@@@@@@@@@@@@@@@content : "+a.getContent());
+		
+		assertTrue(a.getTitle()!=null&&!a.getTitle().equals(""));
+	}
+	public void testAddArticle() {
+		Article article = new Article();
+		article.setTitle("没有插入?");
+		article.setContent("Spring is coming, and winter is leaving, time to show, man!");
+		article.setIntime("2010-2-15");
+		
+		Tag tag = new Tag();
+		tag.setId(8);
+		
+		article.setTag(tag);
+		
+		int ret = service.addArticle(article);
+		assertTrue(ret>0);
+	}
+	public void testGetSimpleArticlesByTagIds(){
+		int tagIds[]={1,2};
+		Map<String,List<Article>> map;
+		map = service.getSimpleArticlesByTagIds(tagIds,8);
+		Set<String> keys = map.keySet();
+		for(String key : keys){
+			List<Article> articles = map.get(key);
+			for(Article ar : articles){
+				System.out.println("xxxxxxxxxxx> intime: "+ar.getIntime());
+			}
+		}
+		assertTrue(map!=null&&map.size()>0);
+	}
+	public void testGetSimpleArticleById(){
+		Article ar = service.getSimpleAritlceById(1);
+		assertNotNull(ar.getTitle());
+		assertTrue(ar.getTitle() != "");
+		assertNotNull(ar.getTag());
+		System.out.println("^^^^^^^^^^^^^^^^simple article tag name : "+ar.getTag().getName());
+		assertTrue(ar.getTag().getId()>0);
+	}
+	public void testUpdateSimpleArticle(){
+		Article article = new Article();
+		article.setId(1);
+		article.setTitle("Service更新的标题");
+		article.setContent("Service更新的内容");
+		
+		int ret = service.updateSimpleArticle(article);
+		
+		assertTrue(ret>0);
+		
+	}
+	public void testGetSimpleArticlesWithTagByTagIds(){
+		int ids[] = {1,2};
+		Map<Tag,List<Article>> map = service.getSimpleArticlesWithTagByTagIds(ids,8);
+		assertTrue(map.size()>0);
+		Set<Tag> set = map.keySet();
+		System.out.println("--->"+set.size());
+		for(Tag tag : set){
+			for(Article a : map.get(tag)){
+				System.out.println("BBBBBBBBBBB-> key : "+tag.getName()+"  value:"+a.getTitle()+" a_id:"+a.getId()+"  time:"+a.getIntime());
+			}
+			System.out.println("\n");
+		}
+	}
+	public void testGetUserByName(){
+		User user = service.getUserByName("auscar");
+		assertNotNull(user);
+		assertNotNull(user.getName());
+		assertNotNull(user.getPwd());
+		
+		User user_none = service.getUserByName("auscar_none");
+		assertNull(user_none);
+		
+	}
+	public void testGetAllTags(){
+		List<Tag> tags = service.getAllTag();
+		assertTrue(tags.size()>0);
+	}
+}

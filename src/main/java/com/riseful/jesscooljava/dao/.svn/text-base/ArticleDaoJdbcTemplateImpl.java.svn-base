@@ -1,0 +1,143 @@
+package com.riseful.jesscooljava.dao;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.RowMapperResultReader;
+
+import com.riseful.jesscooljava.entity.Article;
+import com.riseful.jesscooljava.entity.Tag;
+
+public class ArticleDaoJdbcTemplateImpl implements ArticleDao {
+	private JdbcTemplate template;
+	
+	public void setTemplate(JdbcTemplate template) {
+		this.template = template;
+	}
+
+	public Article getArticleById(int id) {
+		String sql = "select * from Articles where id=" + id;
+		Article article = (Article)template.queryForObject(sql, new ArticleRowMapper());
+		return article;
+	}
+
+	public List<Article> getSimpleArticlesByTagId(int tagId, int num) {
+		String topN = "";
+		if(num > 0){
+			topN = " limit 0, "+num;
+		}
+		
+		String sql = "select a.id,a.title,a.content,a.cover_url,a.intime,c.id as tagId,c.name,c.description from Articles a,ArticleTag b,Tags c where a.id = b.a_id and b.t_id = c.id and c.id="+tagId+topN;
+		List<Article> articles = template.query(sql, new RowMapperResultReader(new SimpleArticleRowMapper()));
+		return articles;
+	}
+	
+	public int addArticle(Article article) {
+		String sql = "insert into Articles (title,content,cover_url,intime) values (?,?,?,?)";
+		int ret = template.update(sql,new Object[]{article.getTitle(),article.getContent(),article.getCover(),article.getIntime()});
+		ret = this.getMaxArticleId();//获取最新插入的Article id
+		return ret;
+	}
+	public List<Tag> getAllTag() {
+		String sql = "select * from Tags where is_home=1";
+		List<Tag> tags = template.query(sql, new RowMapperResultReader(new TagRowMapper()));
+		return tags;
+	}
+	public Map<String,List<Article>> getSimpleArticlesByTagIds(int[] tagIds, int num) {
+		Map<String,List<Article>> map = new HashMap<String,List<Article>>();
+		for(int id : tagIds){
+			List<Article> articles = this.getSimpleArticlesByTagId(id, num);
+			if(articles.size()<=0)continue;
+			map.put(articles.get(0).getTag().getName(), articles);
+		}
+		return map;
+	}
+	
+	
+	
+	private class ArticleRowMapper implements RowMapper{
+		public Object mapRow(ResultSet rs, int index) throws SQLException {
+			Article article = new Article();
+			article.setId(rs.getInt("id"));
+			article.setTitle(rs.getString("title"));
+			article.setContent(rs.getString("content"));
+			article.setIntime(rs.getString("intime"));
+			return article;
+		}
+	}
+
+	private class SimpleArticleRowMapper implements RowMapper{
+		public Object mapRow(ResultSet rs, int index) throws SQLException {
+			Article article = new Article();
+			Tag tag = new Tag();
+			article.setId(rs.getInt("id"));
+			article.setTitle(rs.getString("title"));
+			article.setContent(rs.getString("content"));
+			article.setIntime(rs.getString("intime"));
+			article.setCover(rs.getString("cover_url"));
+			tag.setId(rs.getInt("tagId"));
+			tag.setName(rs.getString("name"));
+			tag.setDescription(rs.getString("description"));
+			article.setTag(tag);
+			return article;
+		}
+	}
+	
+	private class TagRowMapper implements RowMapper{
+		public Object mapRow(ResultSet rs, int index) throws SQLException {
+			Tag tag = new Tag();
+			tag.setId(rs.getInt("id"));
+			tag.setName(rs.getString("name"));
+			tag.setAtHome(rs.getBoolean("is_home"));
+			return tag;
+		}
+	}
+	public int addTagToArticle(Article article, String tagName) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int addTagIdToArticle(Article article, int tagId) {
+		String sql = "insert into ArticleTag (a_id,t_id) values(?,?)";
+		return template.update(sql,new Object[]{article.getId(),tagId});
+	}
+
+	public Article getSimpleArticleById(int id) {
+		String sql = "select a.id,a.title,a.content,a.cover_url,a.intime,c.id as tagId,c.name,c.description from Articles a,ArticleTag b,Tags c where a.id = b.a_id and b.t_id = c.id and a.id="+id;
+
+		Article article = (Article)template.queryForObject(sql, new SimpleArticleRowMapper());
+
+		return article;
+	}
+
+	public int updateSimpleArticle(Article article) {
+		String sql = "update Articles set content=?,title=? where id="+article.getId();
+		return template.update(sql, new Object[]{article.getContent(),article.getTitle()});
+	}
+
+	public int deleteSimpleArticleTag(Article article, Tag tag) {
+		String sql = "delete from ArticleTag where a_id=? and t_id=?";
+		return template.update(sql, new Object[]{article.getId(),tag.getId()});
+	}
+	public int getMaxArticleId(){
+		String sql = "select max(id) from Articles";
+		//String sql = "select last_insert_id()";
+		return template.queryForInt(sql);
+	}
+
+	public Map<Tag, List<Article>> getSimpleArticlesWithTagByTagIds(int[] tagIds, int num) {
+		Map<Tag,List<Article>> map = new HashMap<Tag,List<Article>>();
+		for(int id : tagIds){
+			List<Article> articles = this.getSimpleArticlesByTagId(id, num);
+			if(articles.size()<=0)continue;
+			map.put(articles.get(0).getTag(), articles);
+		}
+		return map;
+	}
+
+}
