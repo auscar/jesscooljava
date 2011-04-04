@@ -7,6 +7,9 @@ import com.riseful.jesscooljava.entity.Article;
 import com.riseful.jesscooljava.entity.Comment;
 import com.riseful.jesscooljava.entity.Tag;
 import com.riseful.jesscooljava.entity.User;
+import com.riseful.jesscooljava.entity.Img;
+import com.riseful.jesscooljava.entity.ImgTag;
+import com.riseful.jesscooljava.entity.UserCookie;
 
 public interface JesscoolService {
 	//public List<Set<Article>> getSimpleArticlesByTagNames(String[] tags);
@@ -17,6 +20,20 @@ public interface JesscoolService {
 	public int delArticle(int id);
 	public int addArticle( Article article );
 	public int getMaxArticleId();
+	public int addUser(User user);
+	public int addImg(Img img);
+	public List<Img> getImgs();
+	public List<ImgTag> getImgTags(String userName);
+	public List<Img> getImgsByTagId(int tagId);
+	public int addImgTag(ImgTag imgTag);
+	public int getMaxTagId();
+	public int getMaxImgTagIdByName(String userName);
+	public int saveCookie(UserCookie userCookie);
+	public UserCookie getUserCookieValueByName(String userCookieName);
+	public int imgUpdate(Img img);
+	public int imgTagDelete(ImgTag imgTag);
+	public int imgTagUpdate(ImgTag imgTag);
+	public int imgDelete(Img img);
 	
 	public int addTagIdToArticle(Article article,int tagId);
 	public List<Article> getSimpleArticlesByTagId(int tagId , int num);

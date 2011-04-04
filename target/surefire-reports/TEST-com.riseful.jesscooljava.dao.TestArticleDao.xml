@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.404" errors="0" skipped="0" tests="14" name="com.riseful.jesscooljava.dao.TestArticleDao">
+<testsuite failures="0" time="0.396" errors="0" skipped="0" tests="14" name="com.riseful.jesscooljava.dao.TestArticleDao">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/home/auscar/java/jdk1.6.0_17/jre/lib/i386"/>
@@ -19,7 +19,7 @@
     <property name="basedir" value="/home/auscar/projects/jesscooljava"/>
     <property name="java.endorsed.dirs" value="/home/auscar/java/jdk1.6.0_17/jre/lib/endorsed"/>
     <property name="os.arch" value="i386"/>
-    <property name="surefire.real.class.path" value="/tmp/surefirebooter5233420117788630296.jar"/>
+    <property name="surefire.real.class.path" value="/tmp/surefirebooter8016170744067126206.jar"/>
     <property name="java.io.tmpdir" value="/tmp"/>
     <property name="line.separator" value="
 "/>
@@ -57,18 +57,18 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.01" classname="com.riseful.jesscooljava.dao.TestArticleDao" name="testGetArticleById"/>
-  <testcase time="0.008" classname="com.riseful.jesscooljava.dao.TestArticleDao" name="testGetArticleByIdAndTagId"/>
-  <testcase time="0.022" classname="com.riseful.jesscooljava.dao.TestArticleDao" name="testGetAllTag"/>
+  <testcase time="0.007" classname="com.riseful.jesscooljava.dao.TestArticleDao" name="testGetArticleById"/>
+  <testcase time="0.007" classname="com.riseful.jesscooljava.dao.TestArticleDao" name="testGetArticleByIdAndTagId"/>
+  <testcase time="0.015" classname="com.riseful.jesscooljava.dao.TestArticleDao" name="testGetAllTag"/>
   <testcase time="0" classname="com.riseful.jesscooljava.dao.TestArticleDao" name="testAddTagIdToArticle"/>
-  <testcase time="0.012" classname="com.riseful.jesscooljava.dao.TestArticleDao" name="testGetSimpleArticlesByTagId"/>
-  <testcase time="0.104" classname="com.riseful.jesscooljava.dao.TestArticleDao" name="testGetSimpleArticlesByTagIds"/>
-  <testcase time="0.036" classname="com.riseful.jesscooljava.dao.TestArticleDao" name="testAddArticle"/>
-  <testcase time="0.014" classname="com.riseful.jesscooljava.dao.TestArticleDao" name="testGetSimpleArticleById"/>
-  <testcase time="0.024" classname="com.riseful.jesscooljava.dao.TestArticleDao" name="testUpdateSimpleArticle"/>
+  <testcase time="0.02" classname="com.riseful.jesscooljava.dao.TestArticleDao" name="testGetSimpleArticlesByTagId"/>
+  <testcase time="0.031" classname="com.riseful.jesscooljava.dao.TestArticleDao" name="testGetSimpleArticlesByTagIds"/>
+  <testcase time="0.101" classname="com.riseful.jesscooljava.dao.TestArticleDao" name="testAddArticle"/>
+  <testcase time="0.006" classname="com.riseful.jesscooljava.dao.TestArticleDao" name="testGetSimpleArticleById"/>
+  <testcase time="0.03" classname="com.riseful.jesscooljava.dao.TestArticleDao" name="testUpdateSimpleArticle"/>
   <testcase time="0" classname="com.riseful.jesscooljava.dao.TestArticleDao" name="testDeleteSimpleArticleTag"/>
   <testcase time="0" classname="com.riseful.jesscooljava.dao.TestArticleDao" name="testGetMaxArticleId"/>
-  <testcase time="0.04" classname="com.riseful.jesscooljava.dao.TestArticleDao" name="testGetSimpleArticlesWithTagByTagIds"/>
-  <testcase time="0.066" classname="com.riseful.jesscooljava.dao.TestArticleDao" name="testGetSimpleArticleDigestsByTagIds"/>
-  <testcase time="0.061" classname="com.riseful.jesscooljava.dao.TestArticleDao" name="testDelArticle"/>
+  <testcase time="0.034" classname="com.riseful.jesscooljava.dao.TestArticleDao" name="testGetSimpleArticlesWithTagByTagIds"/>
+  <testcase time="0.079" classname="com.riseful.jesscooljava.dao.TestArticleDao" name="testGetSimpleArticleDigestsByTagIds"/>
+  <testcase time="0.054" classname="com.riseful.jesscooljava.dao.TestArticleDao" name="testDelArticle"/>
 </testsuite>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.157" errors="0" skipped="0" tests="5" name="com.riseful.jesscooljava.dao.TestTagDao">
+<testsuite failures="0" time="0.206" errors="0" skipped="0" tests="9" name="com.riseful.jesscooljava.dao.TestImgDao">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/home/auscar/java/jdk1.6.0_17/jre/lib/i386"/>
@@ -57,9 +57,13 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.021" classname="com.riseful.jesscooljava.dao.TestTagDao" name="testAddTag"/>
-  <testcase time="0.044" classname="com.riseful.jesscooljava.dao.TestTagDao" name="testGetTagByid"/>
-  <testcase time="0.032" classname="com.riseful.jesscooljava.dao.TestTagDao" name="testUpdateTag"/>
-  <testcase time="0.025" classname="com.riseful.jesscooljava.dao.TestTagDao" name="testGetBiggestId"/>
-  <testcase time="0.031" classname="com.riseful.jesscooljava.dao.TestTagDao" name="testDelTagById"/>
+  <testcase time="0.034" classname="com.riseful.jesscooljava.dao.TestImgDao" name="testAddImg"/>
+  <testcase time="0.011" classname="com.riseful.jesscooljava.dao.TestImgDao" name="testGetImgs"/>
+  <testcase time="0.016" classname="com.riseful.jesscooljava.dao.TestImgDao" name="testGetImgTags"/>
+  <testcase time="0.013" classname="com.riseful.jesscooljava.dao.TestImgDao" name="testGetImgByTagId"/>
+  <testcase time="0.027" classname="com.riseful.jesscooljava.dao.TestImgDao" name="testAddImgTag"/>
+  <testcase time="0.024" classname="com.riseful.jesscooljava.dao.TestImgDao" name="testImgUpdate"/>
+  <testcase time="0.04" classname="com.riseful.jesscooljava.dao.TestImgDao" name="testImgTagDelete"/>
+  <testcase time="0.023" classname="com.riseful.jesscooljava.dao.TestImgDao" name="testImgTagUpdate"/>
+  <testcase time="0.015" classname="com.riseful.jesscooljava.dao.TestImgDao" name="testImgDelete"/>
 </testsuite>

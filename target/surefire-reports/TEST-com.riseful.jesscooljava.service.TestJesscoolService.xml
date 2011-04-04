@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.651" errors="0" skipped="0" tests="16" name="com.riseful.jesscooljava.service.TestJesscoolService">
+<testsuite failures="0" time="0.686" errors="0" skipped="0" tests="17" name="com.riseful.jesscooljava.service.TestJesscoolService">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/home/auscar/java/jdk1.6.0_17/jre/lib/i386"/>
@@ -19,7 +19,7 @@
     <property name="basedir" value="/home/auscar/projects/jesscooljava"/>
     <property name="java.endorsed.dirs" value="/home/auscar/java/jdk1.6.0_17/jre/lib/endorsed"/>
     <property name="os.arch" value="i386"/>
-    <property name="surefire.real.class.path" value="/tmp/surefirebooter5233420117788630296.jar"/>
+    <property name="surefire.real.class.path" value="/tmp/surefirebooter8016170744067126206.jar"/>
     <property name="java.io.tmpdir" value="/tmp"/>
     <property name="line.separator" value="
 "/>
@@ -57,20 +57,21 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.011" classname="com.riseful.jesscooljava.service.TestJesscoolService" name="testAddTag"/>
-  <testcase time="0.041" classname="com.riseful.jesscooljava.service.TestJesscoolService" name="testGetTagByid"/>
-  <testcase time="0.027" classname="com.riseful.jesscooljava.service.TestJesscoolService" name="testUpdateTag"/>
-  <testcase time="0.021" classname="com.riseful.jesscooljava.service.TestJesscoolService" name="testGetBiggestId"/>
-  <testcase time="0.027" classname="com.riseful.jesscooljava.service.TestJesscoolService" name="testDelTagById"/>
-  <testcase time="0.039" classname="com.riseful.jesscooljava.service.TestJesscoolService" name="testGetArticleById"/>
-  <testcase time="0.011" classname="com.riseful.jesscooljava.service.TestJesscoolService" name="testGetArticleByIdAndTagId"/>
-  <testcase time="0.048" classname="com.riseful.jesscooljava.service.TestJesscoolService" name="testGetSimpleArticlesByTagIds"/>
-  <testcase time="0.031" classname="com.riseful.jesscooljava.service.TestJesscoolService" name="testAddArticle"/>
-  <testcase time="0.011" classname="com.riseful.jesscooljava.service.TestJesscoolService" name="testGetSimpleArticleById"/>
-  <testcase time="0.012" classname="com.riseful.jesscooljava.service.TestJesscoolService" name="testUpdateSimpleArticle"/>
-  <testcase time="0.052" classname="com.riseful.jesscooljava.service.TestJesscoolService" name="testGetSimpleArticlesWithTagByTagIds"/>
-  <testcase time="0.047" classname="com.riseful.jesscooljava.service.TestJesscoolService" name="testDelArticle"/>
+  <testcase time="0.008" classname="com.riseful.jesscooljava.service.TestJesscoolService" name="testAddTag"/>
+  <testcase time="0.028" classname="com.riseful.jesscooljava.service.TestJesscoolService" name="testGetTagByid"/>
+  <testcase time="0.015" classname="com.riseful.jesscooljava.service.TestJesscoolService" name="testUpdateTag"/>
+  <testcase time="0.013" classname="com.riseful.jesscooljava.service.TestJesscoolService" name="testGetBiggestId"/>
+  <testcase time="0.021" classname="com.riseful.jesscooljava.service.TestJesscoolService" name="testDelTagById"/>
+  <testcase time="0.031" classname="com.riseful.jesscooljava.service.TestJesscoolService" name="testGetArticleById"/>
+  <testcase time="0.019" classname="com.riseful.jesscooljava.service.TestJesscoolService" name="testGetArticleByIdAndTagId"/>
+  <testcase time="0.039" classname="com.riseful.jesscooljava.service.TestJesscoolService" name="testGetSimpleArticlesByTagIds"/>
+  <testcase time="0.03" classname="com.riseful.jesscooljava.service.TestJesscoolService" name="testAddArticle"/>
+  <testcase time="0.01" classname="com.riseful.jesscooljava.service.TestJesscoolService" name="testGetSimpleArticleById"/>
+  <testcase time="0.015" classname="com.riseful.jesscooljava.service.TestJesscoolService" name="testUpdateSimpleArticle"/>
+  <testcase time="0.098" classname="com.riseful.jesscooljava.service.TestJesscoolService" name="testGetSimpleArticlesWithTagByTagIds"/>
+  <testcase time="0.054" classname="com.riseful.jesscooljava.service.TestJesscoolService" name="testDelArticle"/>
   <testcase time="0.028" classname="com.riseful.jesscooljava.service.TestJesscoolService" name="testGetUserByName"/>
-  <testcase time="0.01" classname="com.riseful.jesscooljava.service.TestJesscoolService" name="testGetAllTags"/>
-  <testcase time="0.23" classname="com.riseful.jesscooljava.service.TestJesscoolService" name="testGetSimpleArticleDigestByTagIds"/>
+  <testcase time="0.019" classname="com.riseful.jesscooljava.service.TestJesscoolService" name="testAddUser"/>
+  <testcase time="0.016" classname="com.riseful.jesscooljava.service.TestJesscoolService" name="testGetAllTags"/>
+  <testcase time="0.225" classname="com.riseful.jesscooljava.service.TestJesscoolService" name="testGetSimpleArticleDigestByTagIds"/>
 </testsuite>

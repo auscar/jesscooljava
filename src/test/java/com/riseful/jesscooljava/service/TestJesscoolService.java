@@ -18,7 +18,7 @@ public class TestJesscoolService extends TestCase {
 	}
 	public void testGetArticleById() {
 		Article a = service.getArticleById(151);
-		System.out.println("@@@@@@@@@@@@@@@@@@@content : "+a.getContent());
+		//System.out.println("@@@@@@@@@@@@@@@@@@@content : "+a.getContent());
 		
 		assertTrue(a.getTitle()!=null&&!a.getTitle().equals(""));
 	}
@@ -42,17 +42,29 @@ public class TestJesscoolService extends TestCase {
 		int ret = service.addArticle(article);
 		assertTrue(ret>0);
 	}
+	public void testAddUser(){
+		User user = new User();
+		user.setName("林惠强"+Math.random());
+		user.setPwd("123456");
+		user.setUserGender(false);
+		user.setUserHeight(170);
+		user.setUserWeight(50);
+		
+		int retUser = service.addUser(user);
+		System.out.println("ooooooooooooooooooooooooooooooooooooooooooo    "+retUser);
+		assertTrue(retUser > 0); 
+	}
 	public void testGetSimpleArticlesByTagIds(){
 		int tagIds[]={1,2};
 		Map<String,List<Article>> map;
 		map = service.getSimpleArticlesByTagIds(tagIds,8);
-		Set<String> keys = map.keySet();
-		for(String key : keys){
-			List<Article> articles = map.get(key);
-			for(Article ar : articles){
-				System.out.println("xxxxxxxxxxx> intime: "+ar.getIntime());
-			}
-		}
+		//Set<String> keys = map.keySet();
+		//for(String key : keys){
+			//List<Article> articles = map.get(key);
+			//for(Article ar : articles){
+			//	System.out.println("xxxxxxxxxxx> intime: "+ar.getIntime());
+			//}
+		//}
 		assertTrue(map!=null&&map.size()>0);
 	}
 	public void testGetSimpleArticleById(){
@@ -60,7 +72,7 @@ public class TestJesscoolService extends TestCase {
 		assertNotNull(ar.getTitle());
 		assertTrue(ar.getTitle() != "");
 		assertNotNull(ar.getTag());
-		System.out.println("^^^^^^^^^^^^^^^^simple article tag name : "+ar.getTag().getName());
+		//System.out.println("^^^^^^^^^^^^^^^^simple article tag name : "+ar.getTag().getName());
 		assertTrue(ar.getTag().getId()>0);
 	}
 	public void testUpdateSimpleArticle(){
@@ -82,15 +94,15 @@ public class TestJesscoolService extends TestCase {
 		assertTrue(map.size()>0);
 		Set<Tag> set = map.keySet();
 		System.out.println("--->"+set.size());
-		for(Tag tag : set){
-			for(Article a : map.get(tag)){
-				System.out.println("BBBBBBBBBBB-> key : "+tag.getName()+"  value:"+a.getTitle()+" a_id:"+a.getId()+"  time:"+a.getIntime());
-			}
-			System.out.println("\n");
-		}
+		//for(Tag tag : set){
+			//for(Article a : map.get(tag)){
+			//	System.out.println("BBBBBBBBBBB-> key : "+tag.getName()+"  value:"+a.getTitle()+" a_id:"+a.getId()+"  time:"+a.getIntime());
+			//}
+			//System.out.println("\n");
+		//}
 	}
 	public void testGetUserByName(){
-		User user = service.getUserByName("auscar");
+		User user = service.getUserByName("despairlin@126.com");
 		assertNotNull(user);
 		assertNotNull(user.getName());
 		assertNotNull(user.getPwd());
@@ -109,14 +121,14 @@ public class TestJesscoolService extends TestCase {
 		assertTrue(map.size()>0);
 		
 		Set<String> set = map.keySet();
-		for(String key : set){
-			System.out.println("~~~~~~~~~~~"+ key +"~~~~~~~~~~~~~");
-			for(Article a : map.get(key)){
-				System.out.println("###"+ key +"###"+a.getId());
-				System.out.println(a.getContent());
-			}
-			System.out.println("\n");
-		}
+		//for(String key : set){
+		//	System.out.println("~~~~~~~~~~~"+ key +"~~~~~~~~~~~~~");
+		//	for(Article a : map.get(key)){
+		//		System.out.println("###"+ key +"###"+a.getId());
+		//		System.out.println(a.getContent());
+		//	}
+		//	System.out.println("\n");
+		//}
 	}
 	
 	public void testAddTag(){

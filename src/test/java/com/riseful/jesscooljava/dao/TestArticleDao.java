@@ -17,7 +17,6 @@ public class TestArticleDao extends TestCase {
 	}
 	public void testGetArticleById() {
 		Article a = articleDao.getArticleById(195);
-		//System.out.println("@@@@@@@@@@@@@@@@@@@content : "+a.getContent());
 		
 		assertTrue(a.getTitle()!=null&&!a.getTitle().equals(""));
 	}
@@ -32,10 +31,7 @@ public class TestArticleDao extends TestCase {
 		assertTrue(tags.size() > 0);
 	}
 	public void testAddTagIdToArticle(){
-//		Article article = new Article();
-//		article.setId(4);
-//		int ret = articleDao.addTagIdToArticle(article, 1);
-//		assertTrue(ret > 0);
+
 	}
 	public void testGetSimpleArticlesByTagId(){
 		List<Article> articles = articleDao.getSimpleArticlesByTagId(1,0);
@@ -74,7 +70,7 @@ public class TestArticleDao extends TestCase {
 		assertTrue(ar.getTag().getId()>0);
 	}
 	public void testUpdateSimpleArticle(){
-		String s = "http://s.jesscool.com";
+		String s = "http://s.jesscool.com/test";
 		Article ar = new Article();
 		ar.setIntime("2010-06-19");
 		ar.setId(1);
@@ -86,6 +82,10 @@ public class TestArticleDao extends TestCase {
 		assertTrue(ret>0);
 		
 		Article a = articleDao.getArticleById(1);
+		System.out.println("&&&&&&&&&&&&&&&&&&&&&&");
+		System.out.println(s);
+		System.out.println(a.getCover());
+		System.out.println("&&&&&&&&&&&&&&&&&&&&&&");
 		assertTrue( s.equals(a.getCover()) );
 		
 	}
