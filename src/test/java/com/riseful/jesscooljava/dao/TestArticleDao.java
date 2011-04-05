@@ -127,6 +127,8 @@ public class TestArticleDao extends TestCase {
 			for(Article a : map.get(key)){
 				System.out.println("###"+ key +"###"+a.getId());
 				System.out.println(a.getContent());
+				assertNotNull(a.getContent());
+				assertNotNull(a.getFirstImg());
 			}
 			System.out.println("\n");
 		}

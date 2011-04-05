@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="1.12" errors="0" skipped="0" tests="4" name="com.riseful.jesscooljava.dao.TestUserDao">
+<testsuite failures="0" time="1.757" errors="0" skipped="0" tests="2" name="com.riseful.jesscooljava.dao.TestUserDao">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/home/auscar/java/jdk1.6.0_17/jre/lib/i386"/>
@@ -19,7 +19,7 @@
     <property name="basedir" value="/home/auscar/projects/jesscooljava"/>
     <property name="java.endorsed.dirs" value="/home/auscar/java/jdk1.6.0_17/jre/lib/endorsed"/>
     <property name="os.arch" value="i386"/>
-    <property name="surefire.real.class.path" value="/tmp/surefirebooter8016170744067126206.jar"/>
+    <property name="surefire.real.class.path" value="/tmp/surefirebooter2372479301081989052.jar"/>
     <property name="java.io.tmpdir" value="/tmp"/>
     <property name="line.separator" value="
 "/>
@@ -31,9 +31,9 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="50.0"/>
     <property name="sun.management.compiler" value="HotSpot Client Compiler"/>
-    <property name="os.version" value="2.6.31-21-generic"/>
+    <property name="os.version" value="2.6.31-17-generic"/>
     <property name="user.home" value="/home/auscar"/>
-    <property name="user.timezone" value="Asia/Shanghai"/>
+    <property name="user.timezone" value="PRC"/>
     <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.specification.version" value="1.6"/>
@@ -57,8 +57,6 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.978" classname="com.riseful.jesscooljava.dao.TestUserDao" name="testGetUserByName"/>
-  <testcase time="0.082" classname="com.riseful.jesscooljava.dao.TestUserDao" name="testAddUser"/>
-  <testcase time="0.021" classname="com.riseful.jesscooljava.dao.TestUserDao" name="testSaveCookie"/>
-  <testcase time="0.021" classname="com.riseful.jesscooljava.dao.TestUserDao" name="testGetUserCookieValueByName"/>
+  <testcase time="1.605" classname="com.riseful.jesscooljava.dao.TestUserDao" name="testAddUser"/>
+  <testcase time="0.069" classname="com.riseful.jesscooljava.dao.TestUserDao" name="testGetUserByName"/>
 </testsuite>

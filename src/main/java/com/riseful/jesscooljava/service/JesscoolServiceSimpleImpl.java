@@ -5,15 +5,14 @@ import java.util.Map;
 
 import com.riseful.jesscooljava.entity.Article;
 import com.riseful.jesscooljava.entity.Comment;
-import com.riseful.jesscooljava.entity.Tag;
-import com.riseful.jesscooljava.entity.User;
 import com.riseful.jesscooljava.entity.Img;
 import com.riseful.jesscooljava.entity.ImgTag;
-import com.riseful.jesscooljava.entity.UserCookie;
+import com.riseful.jesscooljava.entity.Tag;
+import com.riseful.jesscooljava.entity.User;
 import com.riseful.jesscooljava.manager.ArticleManager;
+import com.riseful.jesscooljava.manager.ImgManager;
 import com.riseful.jesscooljava.manager.TagManager;
 import com.riseful.jesscooljava.manager.UserManager;
-import com.riseful.jesscooljava.manager.ImgManager;
 
 public class JesscoolServiceSimpleImpl implements JesscoolService {
 	private ArticleManager articleManager;
@@ -144,13 +143,13 @@ public class JesscoolServiceSimpleImpl implements JesscoolService {
 		return userManager.addUser(user);
 	}
 	
-	public int saveCookie(UserCookie userCookie){
-		return userManager.saveCookie(userCookie);
-	}
-	
-	public UserCookie getUserCookieValueByName(String userCookieName){
-		return userManager.getUserCookieValueByName(userCookieName);
-	}
+//	public int saveCookie(UserCookie userCookie){
+//		return userManager.saveCookie(userCookie);
+//	}
+//	
+//	public UserCookie getUserCookieValueByName(String userCookieName){
+//		return userManager.getUserCookieValueByName(userCookieName);
+//	}
 	
 	public int addImg(Img img){
 		return imgManager.addImg(img);

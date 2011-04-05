@@ -14,8 +14,8 @@ public class TestUserDao extends TestCase {
 	}
 	
 	public void testGetUserByName(){
-		
-		User user = userDao.getUserByName("despairlin@126.com");
+		//despair2@126.com 在使用线上数据库时是存在的
+		User user = userDao.getUserByName("despair2@126.com");
 		assertNotNull(user);
 		assertNotNull(user.getName());
 		assertNotNull(user.getPwd());
@@ -43,19 +43,19 @@ public class TestUserDao extends TestCase {
 		assertTrue(newPwd.equals("123456"));
 	};
 	
-	public void testSaveCookie(){
-		UserCookie userCookie = new UserCookie();
-		userCookie.setCookieName("beetle");
-		userCookie.setCookieValue("beetle" + Math.random());
-		int saveFlag = userDao.saveCookie(userCookie);
-		assertTrue(saveFlag > 0);
-	}
-	
-	public void testGetUserCookieValueByName(){
-		UserCookie userCookie = userDao.getUserCookieValueByName("despairlin@126.com");
-		System.out.println("=================================================================================================");
-		System.out.println(userCookie == null);
-		assertNotNull(userCookie.getCookieValue());
-	}
+//	public void testSaveCookie(){
+//		UserCookie userCookie = new UserCookie();
+//		userCookie.setCookieName("beetle");
+//		userCookie.setCookieValue("beetle" + Math.random());
+//		int saveFlag = userDao.saveCookie(userCookie);
+//		assertTrue(saveFlag > 0);
+//	}
+//	
+//	public void testGetUserCookieValueByName(){
+//		UserCookie userCookie = userDao.getUserCookieValueByName("despairlin@126.com");
+//		System.out.println("=================================================================================================");
+//		System.out.println(userCookie == null);
+//		assertNotNull(userCookie.getCookieValue());
+//	}
 	
 }

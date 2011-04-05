@@ -51,36 +51,36 @@ public class UserDaoJdbcTemplateImpl implements UserDao {
 		}
 		return rowNum;
 	}
-	
-	public int saveCookie(UserCookie userCookie){
-		int rowNum_saveCookie = 0;
-		String sql_saveCookie = "insert into UserCookie(userCookieName,userCookieValue) values(?,?)";
-		try {
-			rowNum_saveCookie = template.update(sql_saveCookie, new Object[] {userCookie.getCookieName(), userCookie.getCookieValue() });
-		} catch (Exception e) {
-			return 0;
-		}
-		return rowNum_saveCookie;
-	}
-	
-	public UserCookie getUserCookieValueByName(String userCookieName){
-		UserCookie userCookie = new UserCookie();
-		String sql_getUserCookieName = "select * from UserCookie where userCookieId=(select MAX(userCookieId) from UserCookie where userCookieName=?)";
-		
-		try{
-			userCookie = (UserCookie)template.queryForObject(sql_getUserCookieName,new Object[]{userCookieName} ,new UserCookieRowMapper());
-		}catch(Exception e){
-			return null;
-		}
-		return userCookie;
-	}
-	private class UserCookieRowMapper implements RowMapper{
-		public Object mapRow(ResultSet rs, int index) throws SQLException {
-			UserCookie userCookie = new UserCookie();
-			userCookie.setCookieName( rs.getString("userCookieName") );
-			userCookie.setCookieValue( rs.getString("userCookieValue") );
-			return userCookie;
-		}
-	}
+// user 的 这些数据已经放在了内存当中的一个hashMap内，不需要放到数据库内了。所以以下代码废弃	
+//	public int saveCookie(UserCookie userCookie){
+//		int rowNum_saveCookie = 0;
+//		String sql_saveCookie = "insert into UserCookie(userCookieName,userCookieValue) values(?,?)";
+//		try {
+//			rowNum_saveCookie = template.update(sql_saveCookie, new Object[] {userCookie.getCookieName(), userCookie.getCookieValue() });
+//		} catch (Exception e) {
+//			return 0;
+//		}
+//		return rowNum_saveCookie;
+//	}
+//	
+//	public UserCookie getUserCookieValueByName(String userCookieName){
+//		UserCookie userCookie = new UserCookie();
+//		String sql_getUserCookieName = "select * from UserCookie where userCookieId=(select MAX(userCookieId) from UserCookie where userCookieName=?)";
+//		
+//		try{
+//			userCookie = (UserCookie)template.queryForObject(sql_getUserCookieName,new Object[]{userCookieName} ,new UserCookieRowMapper());
+//		}catch(Exception e){
+//			return null;
+//		}
+//		return userCookie;
+//	}
+//	private class UserCookieRowMapper implements RowMapper{
+//		public Object mapRow(ResultSet rs, int index) throws SQLException {
+//			UserCookie userCookie = new UserCookie();
+//			userCookie.setCookieName( rs.getString("userCookieName") );
+//			userCookie.setCookieValue( rs.getString("userCookieValue") );
+//			return userCookie;
+//		}
+//	}
 
 }

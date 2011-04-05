@@ -7,9 +7,16 @@ public class Article {
 	private String intime;
 	private String cover;
 	private String tagName;
+	private String firstImg;
 	private Tag tag;
 	
 	
+	public String getFirstImg() {
+		return firstImg;
+	}
+	public void setFirstImg(String firstImg) {
+		this.firstImg = firstImg;
+	}
 	public String getCover() {
 		return cover;
 	}

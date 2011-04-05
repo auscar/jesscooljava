@@ -129,8 +129,12 @@ public class ArticleDaoJdbcTemplateImpl implements ArticleDao {
 			//过滤html标签以及裁减内容形成digest
 			try {
 				
-				String plainText = SimpleHtmlParser.getPlainText(rs.getString("content"));
-
+				//String plainText = SimpleHtmlParser.getPlainText(rs.getString("content"));
+				Map<String,String> ret = SimpleHtmlParser.getPlainTextAndFirstImg(rs.getString("content"));
+				if(ret == null)return null;
+				
+				String plainText = ret.get("plainText");
+				String firstImg = ret.get("firstImg");
 				
 				plainText = plainText.replaceAll("&nbsp;", "");
 				plainText = plainText.replaceAll(" ", "");
@@ -141,6 +145,7 @@ public class ArticleDaoJdbcTemplateImpl implements ArticleDao {
 				}
 				
 				article.setContent(plainText.substring(0, end));
+				article.setFirstImg(firstImg);
 			} catch (ParserException e) {
 				e.printStackTrace();
 			}

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.157" errors="0" skipped="0" tests="5" name="com.riseful.jesscooljava.dao.TestTagDao">
+<testsuite failures="0" time="0.199" errors="0" skipped="0" tests="5" name="com.riseful.jesscooljava.dao.TestTagDao">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/home/auscar/java/jdk1.6.0_17/jre/lib/i386"/>
@@ -19,7 +19,7 @@
     <property name="basedir" value="/home/auscar/projects/jesscooljava"/>
     <property name="java.endorsed.dirs" value="/home/auscar/java/jdk1.6.0_17/jre/lib/endorsed"/>
     <property name="os.arch" value="i386"/>
-    <property name="surefire.real.class.path" value="/tmp/surefirebooter8016170744067126206.jar"/>
+    <property name="surefire.real.class.path" value="/tmp/surefirebooter2372479301081989052.jar"/>
     <property name="java.io.tmpdir" value="/tmp"/>
     <property name="line.separator" value="
 "/>
@@ -31,9 +31,9 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="50.0"/>
     <property name="sun.management.compiler" value="HotSpot Client Compiler"/>
-    <property name="os.version" value="2.6.31-21-generic"/>
+    <property name="os.version" value="2.6.31-17-generic"/>
     <property name="user.home" value="/home/auscar"/>
-    <property name="user.timezone" value="Asia/Shanghai"/>
+    <property name="user.timezone" value="PRC"/>
     <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.specification.version" value="1.6"/>
@@ -57,9 +57,9 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.021" classname="com.riseful.jesscooljava.dao.TestTagDao" name="testAddTag"/>
-  <testcase time="0.044" classname="com.riseful.jesscooljava.dao.TestTagDao" name="testGetTagByid"/>
-  <testcase time="0.032" classname="com.riseful.jesscooljava.dao.TestTagDao" name="testUpdateTag"/>
-  <testcase time="0.025" classname="com.riseful.jesscooljava.dao.TestTagDao" name="testGetBiggestId"/>
-  <testcase time="0.031" classname="com.riseful.jesscooljava.dao.TestTagDao" name="testDelTagById"/>
+  <testcase time="0.032" classname="com.riseful.jesscooljava.dao.TestTagDao" name="testAddTag"/>
+  <testcase time="0.05" classname="com.riseful.jesscooljava.dao.TestTagDao" name="testGetTagByid"/>
+  <testcase time="0.049" classname="com.riseful.jesscooljava.dao.TestTagDao" name="testUpdateTag"/>
+  <testcase time="0.024" classname="com.riseful.jesscooljava.dao.TestTagDao" name="testGetBiggestId"/>
+  <testcase time="0.04" classname="com.riseful.jesscooljava.dao.TestTagDao" name="testDelTagById"/>
 </testsuite>

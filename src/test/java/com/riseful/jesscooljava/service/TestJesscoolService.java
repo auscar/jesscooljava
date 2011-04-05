@@ -102,7 +102,7 @@ public class TestJesscoolService extends TestCase {
 		//}
 	}
 	public void testGetUserByName(){
-		User user = service.getUserByName("despairlin@126.com");
+		User user = service.getUserByName("despair2@126.com");
 		assertNotNull(user);
 		assertNotNull(user.getName());
 		assertNotNull(user.getPwd());
@@ -121,14 +121,12 @@ public class TestJesscoolService extends TestCase {
 		assertTrue(map.size()>0);
 		
 		Set<String> set = map.keySet();
-		//for(String key : set){
-		//	System.out.println("~~~~~~~~~~~"+ key +"~~~~~~~~~~~~~");
-		//	for(Article a : map.get(key)){
-		//		System.out.println("###"+ key +"###"+a.getId());
-		//		System.out.println(a.getContent());
-		//	}
-		//	System.out.println("\n");
-		//}
+		for(String key : set){
+			for(Article a : map.get(key)){
+				assertNotNull(a.getContent());
+				assertNotNull(a.getFirstImg());
+			}
+		}
 	}
 	
 	public void testAddTag(){

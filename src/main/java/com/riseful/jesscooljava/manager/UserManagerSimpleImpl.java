@@ -2,7 +2,6 @@ package com.riseful.jesscooljava.manager;
 
 import com.riseful.jesscooljava.dao.UserDao;
 import com.riseful.jesscooljava.entity.User;
-import com.riseful.jesscooljava.entity.UserCookie;
 
 public class UserManagerSimpleImpl implements UserManager {
 	private UserDao userDao;
@@ -19,12 +18,12 @@ public class UserManagerSimpleImpl implements UserManager {
 		return userDao.addUser(user);
 	}
 	
-	public int saveCookie(UserCookie userCookie){
-		return userDao.saveCookie(userCookie);
-	}
-	
-	public UserCookie getUserCookieValueByName(String userCookieName){
-		return userDao.getUserCookieValueByName(userCookieName);
-	}
+//	public int saveCookie(UserCookie userCookie){
+//		return userDao.saveCookie(userCookie);
+//	}
+//	
+//	public UserCookie getUserCookieValueByName(String userCookieName){
+//		return userDao.getUserCookieValueByName(userCookieName);
+//	}
 
 }

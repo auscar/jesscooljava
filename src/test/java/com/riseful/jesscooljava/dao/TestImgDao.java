@@ -36,10 +36,14 @@ public class TestImgDao extends TestCase {
 	}
 	
 	public void testGetImgTags(){
-		String userName = "despairlin@126.com";
+		String userName = "userNotExist"+Math.random();
 		List<ImgTag> imgTags = imgDao.getImgTags(userName);
-		assertNotNull(imgTags);
-		assertNotNull(imgTags.get(0).getImgTagName());
+		assertTrue(imgTags.size()==0);
+		
+		//这个用户杂线上是有的
+		List<ImgTag> imgTags2 = imgDao.getImgTags("auscar@126.com");
+		assertTrue(imgTags2.size()>0);
+		//assertNotNull(imgTags.get(0).getImgTagName());
 	}
 	
 	public void testGetImgByTagId(){
