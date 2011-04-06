@@ -33,6 +33,8 @@ public interface JesscoolService {
 	public int imgTagDelete(ImgTag imgTag);
 	public int imgTagUpdate(ImgTag imgTag);
 	public int imgDelete(Img img);
+	public User getUserInfo(String name);
+	public int updateUserInfo(User user);
 	
 	public int addTagIdToArticle(Article article,int tagId);
 	public List<Article> getSimpleArticlesByTagId(int tagId , int num);

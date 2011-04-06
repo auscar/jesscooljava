@@ -10,7 +10,14 @@ public class User {
 	Boolean userGender;
 	Integer userWeight;
 	Integer userHeight;
+	Integer userId;
 	
+	public Integer getUserId() {
+		return userId;
+	}
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
 	Set<String> groups = new HashSet<String>();
 	
 	public String getName() {

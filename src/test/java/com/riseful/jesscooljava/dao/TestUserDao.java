@@ -43,6 +43,22 @@ public class TestUserDao extends TestCase {
 		assertTrue(newPwd.equals("123456"));
 	};
 	
+	public void testGetUserInfo(){
+		String userName = "despair2@126.com";
+		//userDao.getUserInfo(userName);
+		assertNotNull(userDao.getUserInfo(userName));
+	}
+	
+	public void testUpdateUserInfo(){
+		User user = new User();
+		user.setPwd("123456");
+		user.setUserHeight(175);
+		user.setUserWeight(55);
+		user.setName("despair2@126.com");
+		int num =userDao.updateUserInfo(user);
+		assertTrue(num > 0);
+	}
+	
 //	public void testSaveCookie(){
 //		UserCookie userCookie = new UserCookie();
 //		userCookie.setCookieName("beetle");

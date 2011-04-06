@@ -143,6 +143,14 @@ public class JesscoolServiceSimpleImpl implements JesscoolService {
 		return userManager.addUser(user);
 	}
 	
+	public User getUserInfo(String name){
+		return userManager.getUserInfo(name);
+	}
+	
+	public int updateUserInfo(User user){
+		return userManager.updateUserInfo(user);
+	}
+	
 //	public int saveCookie(UserCookie userCookie){
 //		return userManager.saveCookie(userCookie);
 //	}

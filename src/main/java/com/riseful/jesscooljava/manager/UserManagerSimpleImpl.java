@@ -18,6 +18,14 @@ public class UserManagerSimpleImpl implements UserManager {
 		return userDao.addUser(user);
 	}
 	
+	public User getUserInfo(String name){
+		return userDao.getUserInfo(name);
+	}
+	
+	public int updateUserInfo(User user){
+		return userDao.updateUserInfo(user);
+	}
+	
 //	public int saveCookie(UserCookie userCookie){
 //		return userDao.saveCookie(userCookie);
 //	}

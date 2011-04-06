@@ -27,11 +27,33 @@ public class UserDaoJdbcTemplateImpl implements UserDao {
 		
 		return user;
 	}
+	public User getUserInfo(String name) {
+		String sql = "select User.userId,userName,userPwd,UserInfo.userHeight,UserInfo.userWeight from User inner join UserInfo on User.userName=UserInfo.userId where User.userName=?";
+		User user;
+		try{
+			user = (User)template.queryForObject(sql,new Object[]{name} ,new UserInfoRowMapper());
+		}catch(Exception e){
+			System.out.println(e);
+			return null;
+		}
+		return user;
+	}
 	private class UserRowMapper implements RowMapper{
 		public Object mapRow(ResultSet rs, int index) throws SQLException {
 			User user = new User();
 			user.setName(rs.getString("userName"));
 			user.setPwd(rs.getString("userPwd"));
+			return user;
+		}
+	}
+	private class UserInfoRowMapper implements RowMapper{
+		public Object mapRow(ResultSet rs, int index) throws SQLException {
+			User user = new User();
+			user.setName(rs.getString("userName"));
+			user.setPwd(rs.getString("userPwd"));
+			user.setUserHeight(rs.getInt("userHeight"));
+			user.setUserWeight(rs.getInt("userWeight"));
+			user.setUserId(rs.getInt("userId"));
 			return user;
 		}
 	}
@@ -51,6 +73,13 @@ public class UserDaoJdbcTemplateImpl implements UserDao {
 		}
 		return rowNum;
 	}
+	
+	public int updateUserInfo(User user){
+		String sql_userInfo = "update User,UserInfo set userPwd=?,userHeight=?,userWeight=? where User.userName=UserInfo.userId and User.userName=?";
+		int num_userInfo = template.update(sql_userInfo, new Object[]{user.getPwd(),user.getUserHeight(),user.getUserWeight(),user.getName()});
+		return num_userInfo;
+	}
+	
 // user 的 这些数据已经放在了内存当中的一个hashMap内，不需要放到数据库内了。所以以下代码废弃	
 //	public int saveCookie(UserCookie userCookie){
 //		int rowNum_saveCookie = 0;
