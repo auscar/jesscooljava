@@ -44,7 +44,7 @@ public class SimpleHtmlParser {
     	);
     	for( SimpleNodeIterator it = list.elements(); it.hasMoreNodes(); ){
     		Node node = it.nextNode();
-    		if( node.toHtml().indexOf("<img")==0 && firstImg.equals("") ){
+    		if( (node.toHtml().indexOf("<img")==0||node.toHtml().indexOf("<IMG")==0) && firstImg.equals("") ){
     			firstImg = node.toHtml();
     		}
     		text.append(node.toPlainTextString());

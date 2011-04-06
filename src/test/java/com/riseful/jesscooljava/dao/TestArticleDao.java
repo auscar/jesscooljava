@@ -118,19 +118,18 @@ public class TestArticleDao extends TestCase {
 	}
 	
 	public void testGetSimpleArticleDigestsByTagIds(){
-		int ids[] = {2,1};
+		int ids[] = {12};
 		Map<String,List<Article>> map = articleDao.getSimpleArticleDigestsByTagIds(ids,10,150);
 		assertTrue(map.size()>0);
 		Set<String> set = map.keySet();
 		for(String key : set){
 			System.out.println("~~~~~~~~~~~"+ key +"~~~~~~~~~~~~~");
 			for(Article a : map.get(key)){
-				System.out.println("###"+ key +"###"+a.getId());
-				System.out.println(a.getContent());
 				assertNotNull(a.getContent());
 				assertNotNull(a.getFirstImg());
+				assertTrue(!a.getFirstImg().equals(""));
 			}
-			System.out.println("\n");
+			
 		}
 	}
 	public void testDelArticle(){
